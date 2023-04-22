@@ -68,7 +68,7 @@ jobs:
 
     - name: Install drat
       run: |
-        R --quiet -e "install.packages('drat', repo='https://cran.r-project.org')"
+        R --quiet -e "install.packages('drat',repo='https://cran.r-project.org')"
 
     - name: Create virtual environment
       run: python -m venv venv
