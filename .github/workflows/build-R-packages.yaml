@@ -59,6 +59,12 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         config: ${{ secrets.SSH_CONFIG }}
 
+    - name: Install drat
+      run: |
+        mkdir ~/R
+        mkdir ~/R/jamovi
+        R --quiet -e "install.packages('drat',repo='https://cran.r-project.org',lib='~/R/jamovi')"
+
     - name: Download Repo
       run: |
         mkdir -p ~/git/drat
@@ -68,11 +74,6 @@ jobs:
         mkdir -p ~/git/drat/src
         rm -f ~/git/drat/src/contrib
         ln -F -s ../bin/linux/contrib/4.1 ~/git/drat/src/contrib
-
-    - name: Install drat
-      run: |
-        mkdir ~/R/jamovi
-        R --quiet -e "install.packages('drat',repo='https://cran.r-project.org',lib='~/R/jamovi')"
 
     - name: Create virtual environment
       run: python -m venv venv
