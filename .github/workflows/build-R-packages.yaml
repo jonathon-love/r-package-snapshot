@@ -71,7 +71,8 @@ jobs:
 
     - name: Install drat
       run: |
-        R --quiet -e "install.packages('drat',repo='https://cran.r-project.org')"
+        mkdir ~/R/jamovi
+        R --quiet -e "install.packages('drat',repo='https://cran.r-project.org',lib='~/R/jamovi')"
 
     - name: Create virtual environment
       run: python -m venv venv
