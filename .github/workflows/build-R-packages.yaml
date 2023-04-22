@@ -73,6 +73,7 @@ jobs:
         # symlink src/contrib to the binary (some things expect a src)
         mkdir -p ~/git/drat/src
         rm -f ~/git/drat/src/contrib
+        touch ~/git/drat/src/contrib/PACKAGES
         ln -F -s ../bin/linux/contrib/4.1 ~/git/drat/src/contrib
 
     - name: Create virtual environment
