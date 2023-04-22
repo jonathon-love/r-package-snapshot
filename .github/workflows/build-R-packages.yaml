@@ -22,7 +22,7 @@ jobs:
       run: |
         sudo apt install flatpak
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        flatpak install -y --user org.jamovi.jamovi
+        flatpak install -y --user flathub org.jamovi.jamovi
 
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
