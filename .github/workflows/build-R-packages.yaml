@@ -74,7 +74,11 @@ jobs:
         mkdir -p ~/git/drat/src
         rm -f ~/git/drat/src/contrib
         ln -F -s ../bin/linux/contrib/4.1 ~/git/drat/src/contrib
-        echo "" >>~/git/drat/src/contrib/PACKAGES
+        mkdir -p ~/git/drat/bin
+        mkdir -p ~/git/drat/bin/linux
+        mkdir -p ~/git/drat/bin/linux/contrib
+        mkdir -p ~/git/drat/bin/linux/contrib/4.1
+        echo "" >>~/git/drat/bin/linux/contrib/4.1/PACKAGES
 
     - name: Create virtual environment
       run: python -m venv venv
