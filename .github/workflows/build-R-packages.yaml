@@ -24,12 +24,17 @@ jobs:
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         sudo flatpak install -y flathub org.jamovi.jamovi
 
-    - name: Set up R
-      uses: r-lib/actions/setup-r@v2
+    #- name: Set up R
+    #  uses: r-lib/actions/setup-r@v2
+    
+    - name: Add R
+      run: |
+        sudo echo 'flatpak run org.jamovi.jamovi -R $*' >/usr/local/bin/R
+        sudo chmod a+x /usr/local/bin/R
 
     - name: Check R version
       run: |
-        flatpak run org.jamovi.jamovi -R --version
+        R --version
 
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -58,7 +63,8 @@ jobs:
 
         # symlink src/contrib to the binary (some things expect a src)
         mkdir -p ~/git/drat/src
-        # ln -F -s ../bin/macosx/contrib/4.1 ~/git/drat/src/contrib
+        rm -f ~/git/drat/src/contrib
+        ln -F -s ../bin/linux/contrib/4.1 ~/git/drat/src/contrib
 
     - name: Install drat
       run: |
