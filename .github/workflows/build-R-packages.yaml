@@ -20,8 +20,8 @@ jobs:
 
     - name: Install jamovi
       run: |
-        apt install flatpak
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        sudo apt install flatpak
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         flatpak install -y --user https://dl.flathub.org/build-repo/17922/org.jamovi.jamovi.flatpakref
 
     - name: Set up R
