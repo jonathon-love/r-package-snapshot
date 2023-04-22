@@ -13,6 +13,7 @@ jobs:
     env:
       REPO_SNAPSHOT_DATE: "2023-04-07"
       REPO_URL: "https://packagemanager.rstudio.com/cran/2023-04-07"
+      R_LIBS_USER: "~/R/jamovi"
 
     steps:
     - name: Checkout Code
