@@ -36,7 +36,6 @@ systemfonts
 withr
 xfun
 RInside
-RProtoBuf
 cachem
 desc
 diffobj
