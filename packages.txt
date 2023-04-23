@@ -516,7 +516,6 @@ vcdExtra
 visNetwork
 webshot
 KernSmoothIRT
-PMCMRplus
 R.rsp
 correlation
 difR
