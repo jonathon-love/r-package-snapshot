@@ -365,7 +365,6 @@ R.oo
 RcppArmadillo
 RcppEigen
 Rdpack
-Rmpfr
 V8
 benford.analysis
 cNORM
