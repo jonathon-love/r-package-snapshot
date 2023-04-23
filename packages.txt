@@ -427,7 +427,6 @@ setter
 stringr
 svglite
 tinytex
-units
 vegan
 xgboost
 xts
@@ -520,7 +519,6 @@ R.rsp
 correlation
 difR
 effectsize
-epiR
 mi
 party
 prodlim
