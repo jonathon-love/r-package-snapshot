@@ -503,7 +503,6 @@ performance
 pillar
 pkgbuild
 quantmod
-rgl
 rmarkdown
 rmdpartials
 rockchalk
@@ -513,7 +512,6 @@ tidyselect
 vcdExtra
 visNetwork
 webshot
-KernSmoothIRT
 R.rsp
 correlation
 difR
