@@ -98,8 +98,8 @@ jobs:
       run: |
         R --quiet -e "{lapply(list.files(pattern='\\\\\\\\.tgz$'),drat::insertPackage);invisible(NULL)}"
 
-    #- name: Upload Repo
-    #  run: rsync -azP --delete ~/git/drat/ repo:${{ secrets.REPO_DIR }}/cran/${{ env.REPO_SNAPSHOT_DATE }}
+    - name: Upload Repo
+      run: rsync -azP --delete ~/git/drat/ repo:${{ secrets.REPO_DIR }}/cran/${{ env.REPO_SNAPSHOT_DATE }}
 
 #    - name: Upload Artifacts
 #      uses: actions/upload-artifact@v2
