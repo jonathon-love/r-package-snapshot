@@ -96,7 +96,7 @@ jobs:
 
     - name: Populate Repo
       run: |
-        R --quiet -e "{a<-list.files(pattern='\\\\.tar\\\\.gz$');print(a);lapply(a,drat::insertPackage);invisible(NULL)}"
+        R --quiet -e "{a<-list.files(pattern='linux-gnu\\\\.tar\\\\.gz$');print(a);lapply(a,drat::insertPackage);invisible(NULL)}"
 
     - name: Upload Repo
       run: rsync -azP --delete ~/git/drat/ repo:${{ secrets.REPO_DIR }}/cran/${{ env.REPO_SNAPSHOT_DATE }}
