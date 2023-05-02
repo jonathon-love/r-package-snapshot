@@ -71,6 +71,8 @@ jobs:
         mkdir -p ~/git/drat
         rsync -azP repo:${{ secrets.REPO_DIR }}/cran-linux/${{ env.REPO_SNAPSHOT_DATE }}/ ~/git/drat
         mkdir -p ~/git/drat/src
+        mkdir -p ~/git/drat/src/contrib
+        echo "" >>~/git/drat/src/contrib/PACKAGES
 
     - name: Create virtual environment
       run: python -m venv venv
