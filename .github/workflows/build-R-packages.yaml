@@ -14,10 +14,15 @@ jobs:
       REPO_SNAPSHOT_DATE: "2023-04-07"
       REPO_URL: "https://packagemanager.rstudio.com/cran/2023-04-07"
       R_LIBS_USER: "~/R/jamovi"
+      R_MAKEVARS_USER: $GITHUB_WORKSPACE/Makeconf
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+
+    - name: check env var
+      run:
+        echo $R_MAKEVARS_USER
 
     - name: Install jamovi
       run: |
@@ -29,7 +34,7 @@ jobs:
 
     #- name: Set up R
     #  uses: r-lib/actions/setup-r@v2
-    
+
     - name: Add R
       run: |
         sudo echo 'flatpak run --devel org.jamovi.jamovi -R $@' >/usr/local/bin/R
